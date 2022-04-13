@@ -27,7 +27,7 @@ const roomData = [
 app.get('/', (req, res) => {
   res.sendFile(__dirname +"/index.html")
 });
-//Test Changex
+//Test Changes
 
 io.on('connection', (socket) => {
   socket.on("action", function (action) {
