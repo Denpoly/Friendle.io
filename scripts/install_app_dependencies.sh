@@ -7,7 +7,7 @@ nvm install node
 cd /home/ec2-user/Friendle.io/my-app
 npm install
 npm install express
-npm intall pm2
+npm install pm2
 cd /home/ec2-user/Friendle.io/server
 npm install
 cd /home/ec2-user/Friendle.io/my-app
