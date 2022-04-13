@@ -1,6 +1,7 @@
 #!/bin/bash
+source /home/ec2-user/.bash_profile
 cd /home/ec2-user/Friendle.io/my-app
-~/.nvm/versions/node/v17.9.0/bin/npm install
-~/.nvm/versions/node/v17.9.0/bin/npm install express
+npm install
+npm install express
 cd /home/ec2-user/Friendle.io/server
-~/.nvm/versions/node/v17.9.0/bin/npm install
+npm install

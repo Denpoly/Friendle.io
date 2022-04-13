@@ -1,4 +1,5 @@
 #!/bin/bash
+source /home/ec2-user/.bash_profile
 cd /home/ec2-user/Friendle.io/my-app
-~/.nvm/versions/node/v17.9.0/bin/npm start
-~/.nvm/versions/node/v17.9.0/bin/npm run server
+npm start
+npm run server
