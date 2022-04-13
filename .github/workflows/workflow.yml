@@ -56,4 +56,4 @@ jobs:
             --application-name Friendle.io \
             --deployment-group-name AppDeploymentGroup \
             --deployment-config-name CodeDeployDefault.OneAtATime \
-            --github-location repository=${{ https://github.com/Denpoly/Friendle.io }},commitId=${{CI}}
+            --github-location repository=${{ github.repository }},commitId=${{github.sha}}
