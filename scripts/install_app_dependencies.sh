@@ -1,7 +1,10 @@
 #!/bin/bash
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads 
+#install node
+apt-get install curl -y
+--silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
+apt-get install nodejs -y
+apt-get install npm -y
+
 cd /home/ec2-user/Friendle.io/my-app
 npm install
 npm install express
