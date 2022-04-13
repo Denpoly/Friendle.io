@@ -16,15 +16,6 @@ jobs:
           # Set always-auth in npmrc
           always-auth: false# optional, default is false
           # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
-      # Step 3
-      - name: Install dependencies
-        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-      # Step 4
-      - name: Install dependencies 2
-        run: . ~/.nvm/nvm.sh
-      # Step 5 
-      - name: Install dependencies 3
-        run: nvm install node
       # Step 4
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1
