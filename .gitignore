@@ -1,4 +1,4 @@
 out/
 *.iml
-/node_modules
+./my-app/node_modules
 /server/node_modules
