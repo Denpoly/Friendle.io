@@ -1,0 +1,59 @@
+name: CI/CD Pipeline
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1
+      - uses: actions/checkout@v2
+      # Step 2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.1.1
+        with:
+          # Set always-auth in npmrc
+          always-auth: false# optional, default is false
+          # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
+      # Step 3
+      - name: Install dependencies
+        run: curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+      # Step 4
+      - name: Install dependencies 2
+        run: . ~/.nvm/nvm.sh
+      # Step 5 
+      - name: Install dependencies 3
+        run: nvm install node
+      # Step 4
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      # Step 5
+      - name: Build Application and Run unit Test
+        run: npm start & npm run server
+
+  continuous-deployment:
+    runs-on: ubuntu-latest
+    needs: [continuous-integration]
+    if: github.ref == 'refs/heads/main'
+    steps:
+     # Step 1
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id:  ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key:  ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+     # Step 2
+      - name: Create CodeDeploy Deployment
+        id: deploy
+        run: |
+          aws deploy create-deployment \
+            --application-name Friendle.io \
+            --deployment-group-name AppDeploymentGroup \
+            --deployment-config-name CodeDeployDefault.OneAtATime \
+            --github-location repository=${{ https://github.com/Denpoly/Friendle.io }},commitId=${{CI}}
