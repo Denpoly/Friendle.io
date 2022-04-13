@@ -1,6 +1,6 @@
 #!/bin/bash
-cd ../my-app
+cd /home/ec2-user/Friendle.io/my-app
 npm install
 npm install express
-cd ../server
+cd /home/ec2-user/Friendle.io/server
 npm install
