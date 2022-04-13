@@ -1,9 +1,8 @@
 #!/bin/bash
 #install node
-yum install curl -y
---silent --location https://deb.nodesource.com/setup_4.x | sudo bash -
-yum install nodejs -y --skip-broken
-yum install npm -y --skip-broken
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
+. ~/.nvm/nvm.sh
+nvm install node
 
 cd /home/ec2-user/Friendle.io/my-app
 npm install
