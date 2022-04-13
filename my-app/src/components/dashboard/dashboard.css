@@ -1,0 +1,154 @@
+.credit{
+    position: absolute;
+    top: 95%;
+    left: 44.5%;
+    font-size: medium;
+    color: rgb(23, 212, 23);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.dashboardContainer{
+    width:100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 10%
+}
+
+.cardContainer{
+    width:30vw;
+    justify-content: center;
+    flex-direction: column;
+    height:100%
+}
+.options{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.startButton{
+    top: 60%;
+    width:20vh;
+    height:10vh;
+    margin: 0 auto;
+    margin-top: 5vh;
+}
+
+.inputRoom{
+    margin-left: 3vw;
+    margin-right: 3vw;
+    width: 20vw;
+    height: 5vh;
+    margin-top: 5vh;
+      
+  border:2px solid rgba(0, 0, 0, 0.5);
+  font-size:.75em;
+  padding:.25em .5em .3125em;
+  color:rgba(0, 0, 0, 0.5);
+  border-radius:.5em;
+  background:transparent;
+  transition:all .100s;
+
+}
+
+.or{
+    display:flex;
+    flex-direction: column;
+    color: rgb(23, 212, 23);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.joinButtonContainer{
+    padding-top: 3vh;
+}
+
+.joinButton {
+    width: 6vw;
+    height: 4vh;
+    margin-top: 5vh;
+    
+    
+}
+
+.inputContainer{
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 3vh;
+}
+
+.title{
+    background-image: url(../../imgs/logo.png);
+    background-repeat: no-repeat;
+    width:35vw;
+    height:20vh;
+    margin-bottom: 5vh;
+}
+.joinARoom{
+    height:40vh;
+    width:30vw;
+}
+
+
+/* CSS */
+.button-19 {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  height:max-content;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width:fit-content;
+  margin-top: 5vh;
+}
+
+.button-19:after {
+  background-clip: padding-box;
+  background-color: #1CB0F6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  bottom: -4px;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: -1;
+}
+
+.button-19:main,
+.button-19:focus {
+  user-select: auto;
+}
+
+.button-19:hover:not(:disabled) {
+  filter: brightness(1.1);
+}
+
+.button-19:disabled {
+  cursor: auto;
+}

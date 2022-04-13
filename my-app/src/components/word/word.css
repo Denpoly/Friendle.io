@@ -1,0 +1,64 @@
+.square {
+    display: flex;
+    width: 5vw;
+    height: 10vh;
+    border-color: black;
+    border: thin solid black;
+    text-align: center;
+    margin: 1%;
+  }
+
+.square-bold {
+    display: flex;
+    width: 5vw;
+    height: 10vh;
+    border-color: black;
+    border: thick solid black;
+    text-align: center;
+    margin: 1%;
+}
+
+.square--correct {
+    display: flex;
+    width: 5vw;
+    height: 10vh;
+    border-color: black;
+    border: thin solid black;
+    text-align: center;
+    margin: 1%;
+    background-color: green;
+}
+
+.square--almostCorrect {
+    display: flex;
+    width: 5vw;
+    height: 10vh;
+    border-color: black;
+    border: thin solid black;
+    text-align: center;
+    margin: 1%;
+    background-color: yellow;
+}
+
+.square--notCorrect {
+    display: flex;
+    width: 5vw;
+    height: 10vh;
+    border-color: black;
+    border: thin solid black;
+    text-align: center;
+    margin: 1%;
+    background-color: lightgray;
+}
+
+.wordContainer{
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.letter{
+    margin:auto;
+    font-size:8vh
+}
+

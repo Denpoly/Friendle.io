@@ -1,0 +1,10 @@
+.animatedGroup{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.logo{
+    color: rgb(23, 212, 23);
+    font-size: 12vh;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}

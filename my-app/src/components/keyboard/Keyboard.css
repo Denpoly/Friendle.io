@@ -1,0 +1,22 @@
+.keysContainer{
+    display:flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+}
+.outerContainer{
+    justify-content: center;
+    top: 30vh;
+    margin-top: 1%
+    
+}
+
+.key{
+    border: 2px solid black;
+    margin-left: 2%;
+    margin-top:2%;
+    width:3%;
+    height:3%;
+    font-family: 'Times New Roman', Times, serif;
+
+}
