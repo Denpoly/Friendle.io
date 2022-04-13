@@ -10,7 +10,7 @@ import socketIoMiddleware from 'redux-socket.io-middleware'
 import { applyMiddleware, combineReducers } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
-const io = socketIO.connect(`http://44.202.248.150:8000`);
+const io = socketIO.connect(`http://3.86.147.227:8000`);
 
 
 const asyncDispatchMiddleware = store => next => action => {

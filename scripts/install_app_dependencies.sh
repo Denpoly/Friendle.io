@@ -7,8 +7,11 @@ nvm install node
 cd /home/ec2-user/Friendle.io/my-app
 npm install
 npm install express
+npm intall pm2
 cd /home/ec2-user/Friendle.io/server
 npm install
 cd /home/ec2-user/Friendle.io/my-app
-nohup npm start
-nohup npm run server
+pm2 start ../my-app/startservscript.js
+pm2 start ../my-app/startscript.js
+# nohup npm start
+# nohup npm run server
