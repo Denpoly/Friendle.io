@@ -25,7 +25,7 @@ jobs:
           aws-region: us-east-1
       # Step 5
       - name: Build Application and Run unit Test
-        run: npm start & npm run server
+        run: cd my-app & npm start & npm run server
 
   continuous-deployment:
     runs-on: ubuntu-latest
