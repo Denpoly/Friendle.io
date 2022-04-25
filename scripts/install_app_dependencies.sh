@@ -2,7 +2,7 @@
 #install node
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
 . ~/.nvm/nvm.sh
-nvm install v10.13.0 -g
+nvm install 14 -g
 
 cd /home/ec2-user/Friendle.io/my-app
 npm install
