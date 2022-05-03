@@ -10,11 +10,14 @@ const messageSlice = createSlice({
   reducers: {
       setMessages: (state, action) => {
         state.messages.push({message: action.message, name: action.sender})
+      },
+      resetMessages: (state, action) => {
+        state.messages = []
       }
 
   }
 });
 
-export const {setMessages} = messageSlice.actions
+export const {setMessages, resetMessages} = messageSlice.actions
 
 export default messageSlice.reducer

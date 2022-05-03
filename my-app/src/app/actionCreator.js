@@ -62,3 +62,13 @@ export const resetRoundSocket = () => {
 
     }
 }
+
+export const userLeave = (roomId) => {
+    return {
+        type: "USER_LEAVE",
+        meta: {
+            remote: true,
+            roomId: roomId
+        }
+    }
+}

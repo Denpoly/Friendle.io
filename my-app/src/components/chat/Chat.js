@@ -94,24 +94,28 @@ function Chat(props) {
                                 <a ><strong>Users</strong></a>
                             </div>
                             <List sx={{
-                                    width: '15vw',
+                                    width: '20vw',
                                     bgcolor: 'background.grey',
                                     position: 'relative',
-                                    overflow: 'auto',
+                                    overflow: 'auto'
                                     
                                 }}
                                 >   
                                     
                                     {currUsers.map(user => {
-                                        return (<ListItem
+                                        return (<ListItem className = "userPane"
                                             
                                         >
-                                                    <ListItemText primary = {user.user}>
+                                                <ListItemText style = {{position: "absolute", left: "5%"}}className = {user.ready? "readyTextYES" : "readyTextNOT"} primary = {user.ready? "(R)": "(NR)"}>
+                                                </ListItemText>
+                                                    <ListItemText style = {{position: "absolute", left: "25%"}} primary = {user.user}>
                                                     
                                                     </ListItemText>
-                                                    <ListItemText className = {user.ready? "readyTextYES" : "readyTextNOT"} primary = {user.ready? "(Ready)": ""}>
+                                                    <ListItemText style = {{position: "absolute", left: "75%"}} primary = {"Score:  " + user.score}>
                                                     
                                                     </ListItemText>
+                                                    
+                                                    
                                                 </ListItem>)
                                     })}
                                 </List>

@@ -14,8 +14,16 @@
   }
 }
 
+.logoButton{
+  position:absolute;
+  left: 3.5%;
+  top: 2%;
+  color: rgb(23, 212, 23);
+  font-size: 6vh;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 .App-header {
-  min-height: 100vh;
+  min-height:100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +38,10 @@
 
 .appContainer {
   display: flex;
-  flex-direction: row
+  flex-direction: row;
+  justify-content: center;
+  height:100%;
+  width: 100%;
 }
 
 @keyframes App-logo-float {

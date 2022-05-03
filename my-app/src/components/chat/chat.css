@@ -20,10 +20,14 @@
 }
 
 .userList{
-    height: 42vh;
+    height: 40vh;
     border: 2px solid black;
+    padding-top: .8vh;
+    padding-bottom: .8vh;
 }
-
+.userPane{
+  margin-top: 1vh
+}
 .readyTextYES{
     color:green
 }
@@ -32,10 +36,9 @@
     top: 0;
     font-family: 'Times New Roman', Times, serif;
 }
-.userContainer{
+.userContainer{ 
     display:flex;
     flex-direction: column;
-    height: max-content;
 }
 
 .input{

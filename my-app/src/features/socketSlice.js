@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import io from "socket.io-client"
+import {resetMessages} from "./messageSlice"
 const initialState = {
     room: null,
     userName: null,
@@ -32,14 +33,19 @@ const socketSlice = createSlice({
           return user.user === action.user
         });
         console.log(ind);
-        state.usersInRoom[ind] = {
-          user: action.user,
-          ready: true
-        }
+        state.usersInRoom[ind].user = action.user;
+        state.usersInRoom[ind].ready = true;
+      },
+      leaveRoomRedux: (state, action) => {
+        state.room = null;
+        state.userName = null;
+        state.usersInRoom = [];
+        state.inRound = false;
+        action.asyncDispatch(resetMessages());
       }
   }
 });
 
-export const {setRoom, setUsername, sendUsers} = socketSlice.actions
+export const {setRoom, setUsername, sendUsers, leaveRoomRedux} = socketSlice.actions
 
 export default socketSlice.reducer

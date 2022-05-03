@@ -52,6 +52,7 @@ io.on('connection', (socket) => {
               user: socket.nickname,
               ready: socket.ready,
               inRound: false,
+              score: 0
             }
           })
           io.in(action.meta.roomId).emit('action', actionCreator.sendRoomUsers(nicknames))
@@ -105,9 +106,13 @@ io.on('connection', (socket) => {
             
           })
           roomData[roomTempInd].users.forEach(user => {
+            if (user.user === action.meta.user){
+              
+              user.score = user.score + 1;
+            }
             user.inRound = false;
           })
-          room
+          console.log("roomData after adding score")
           console.log(roomData)
           io.in(action.meta.roomId).emit('action', actionCreator.emitMessage(`${action.meta.user} has won the round. The correct word was ${roomData[roomTempInd].currentWord}`, "SERVER"))
           io.in(action.meta.roomId).emit('action', actionCreator.resetRoundGame())
@@ -139,19 +144,30 @@ io.on('connection', (socket) => {
           return !user.inRound 
           })){
           console.log("Everyone finished round")
-          
+          io.in(action.meta.roomId).fetchSockets().then(sockets => {
+            sockets.forEach(socket => {
+              socket.ready = false
+              
+            })})
           io.in(action.meta.roomId).emit('action', actionCreator.resetRoundGame());
           io.in(action.meta.roomId).emit('action', actionCreator.emitMessage(`Out of time! The correct word was "${roomData[roomTempId].currentWord}"`, "SERVER"))
           io.in(action.meta.roomId).emit('action', actionCreator.sendRoomUsers(roomData[roomTempId].users))
 
         }
       break;
+      case "USER_LEAVE":
+        const roomInd = roomData.findIndex(room => {
+          return room.roomName == action.meta.roomId
+        })
+        roomData[roomInd].users = roomData[roomInd].users.filter(user => {
+          return user.user != socket.nickname
+        })
+        socket.leave(action.meta.roomId);
+        console.log(roomData);
     }})
     socket.on("disconnecting", () => {
       console.log(socket.rooms);
       const roomsToDisconnect = socket.rooms;
-      console.log("Before removing user")
-      console.log(roomData)
       roomsToDisconnect.forEach(room => {
         const i = roomData.findIndex(roomIn => {
           return roomIn.roomName === room
@@ -166,11 +182,9 @@ io.on('connection', (socket) => {
         }
         
       })
-      console.log("After removing user")
-      console.log(roomData);
-      console.log(socket.nickname + " disconnected");
       
-      }) 
+      })
+      
     
             
 });
